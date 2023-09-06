@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Islamic Quiz App</title>
+    <link rel="shortcut icon" href="./img/favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+</head>
+<body>
+    <main class="main">
+        <div class="start_page  hide-pages">
+            <div>
+                <h2>islamic quiz</h2>
+                <h5>say bismillah before you begin!</h5>
+                <button class="start_btn">start quiz</button>
+            </div>
+        </div>
+
+        <div class="quiz_page hide-pages">
+            <div class="container">
+                <h5>quiz</h5>
+                <div class="progress-container">
+                    <h6>
+                        question <span>1</span> of <span>30</span>
+                    </h6>
+                    <div class="progress-bar">
+                        <span class="progress"></span>
+                    </div>
+                </div>
+
+                <div class="question-container">
+                    <p class="question">
+                        What is the answer to the question below?
+                    </p>
+                    <ul class="options">
+                        <li>yes</li>
+                        <li>no</li>
+                        <li>not Sure</li>
+                        <li>ask Again</li>
+                    </ul>
+                </div>
+
+                <div class="btn-container">
+                    <button class="next_btn">next</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="result_page">
+            <div class="container">
+                <h2>quiz completed</h2>
+                <h2>
+                    <i class="fa-solid fa-trophy"></i>
+                </h2>
+                <h4>you scored!</h4>
+                <h3>
+                    <span>15</span>/<span>30</span>
+                </h3>
+            </div>
+        </div>
+
+        <div class="leader_board hide-pages">
+            <div class="container">
+                <h2>leaderboard</h2>
+
+                <table class="leader-table">
+                    <tr class="table-heading">
+                        <th>rank</th>
+                        <th>name</th>
+                        <th>score</th>
+                    </tr>
+                    <tr class="table-data">
+                        <td>1</td>
+                        <td>player1</td>
+                        <td>0</td>
+                    </tr>
+                </table>
+
+                <div class="btn-container">
+                    <button class="play_again_btn">play again</button>
+                    <button class="quit_btn">quit</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
