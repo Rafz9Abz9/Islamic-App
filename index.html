@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=
     , initial-scale=1.0">
     <title>Islamic Quiz App</title>
-    <link rel="shortcut icon" href="./img/favico n_io/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/favicon_io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 </head>
 <body>
     <main class="main">
-        <div class="start_page  hide-pages">
+        <div class="start_page">
             <div>
                 <h2>islamic quiz</h2>
                 <h5>say bismillah before you begin!</h5>
@@ -20,12 +20,12 @@
             </div>
         </div>
 
-        <div class="quiz_page hide-pages">
+        <div class="quiz_page  hide-pages">
             <div class="container">
                 <h5>quiz</h5>
                 <div class="progress-container">
                     <h6>
-                        question <span>1</span> of <span>30</span>
+                        question <span class="current">0</span> of <span class="total">0</span>
                     </h6>
                     <div class="progress-bar">
                         <span class="progress"></span>
@@ -37,10 +37,7 @@
                         What is the answer to the question below?
                     </p>
                     <ul class="options">
-                        <li>yes</li>
-                        <li>no</li>
-                        <li>not Sure</li>
-                        <li>ask Again</li>
+                        
                     </ul>
                 </div>
 
@@ -51,7 +48,7 @@
             </div>
         </div>
 
-        <div class="result_page">
+        <div class="result_page  hide-pages">
             <div class="container">
                 <h2>quiz completed</h2>
                 <h2>

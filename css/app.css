@@ -186,8 +186,18 @@ h5{
     appearance: none;
    
 }
+
+.question-container .options li.correct{
+    border: 1px solid var(--success);
+    color:  var(--success) ;
+}
+.question-container .options li.incorrect{
+    border: 1px solid var(--danger);
+    color:   var(--danger) ;
+}
 .question-container .options li:hover{
     border: 1px solid var(--sky-blue);
+    color: var(--sky-blue);
     outline: 0px;
     transform: scale(1.05, 1.05);
 }
