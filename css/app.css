@@ -195,7 +195,7 @@ h5{
 .quiz_page .btn-container {
     display: flex;
 }
-.quiz_page .btn-container  .next_btn{
+.quiz_page .btn-container  .next_btn, .result_page .btn-container .check_btn, .result_page .btn-container .quit_btn{
     background-color: var(--sky-blue-dark);
     border: 1px solid var(--light-gray);
     border-radius: 15px;
@@ -207,7 +207,8 @@ h5{
     padding: 10px;
     width: 100%;
 }
-.quiz_page .btn-container  .next_btn:hover{
+
+.quiz_page .btn-container  .next_btn:hover, .check_btn:hover, .quit_btn:hover{
     border: 1px solid var(--sky-blue);
     outline: 0px;
     transform: scale(1.05, 1.05);
@@ -233,6 +234,10 @@ h5{
     color: var(--text-white);
     text-align: center;
     text-transform: capitalize;
+}
+
+.result_page .btn-container .check_btn, .result_page .btn-container .quit_btn{
+    margin: 10px 0;
 }
 
 .leader_board h2{
