@@ -4,13 +4,13 @@
 
 # Wireframes
 
-- Home Page Wireframe:
+## Home Page Wireframe:
 
-- Quiz Page Wireframe:
+## Quiz Page Wireframe:
 
-- Result Page Wireframe:
+## Result Page Wireframe:
 
-- Leaderboard Page Wireframe:
+## Leaderboard Page Wireframe:
 
 
 # Existing Features
