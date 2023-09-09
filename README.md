@@ -2,6 +2,9 @@
 
 This is a Quiz Website that tests users on their Islamic Knowledge. This website is created in order to assist Muslims and Non-Muslims in their Islamic Knowledge. 
 
+![image](https://github.com/Rafz9Abz9/Islamic-App/assets/126483536/e970dd2e-3cf5-4bd8-b8bf-6162ac27a521)
+
+
 [Live Link](https://rafz9abz9.github.io/Islamic-App/)
 
 [Repository Link](https://github.com/Rafz9Abz9/Islamic-App)
