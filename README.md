@@ -24,11 +24,19 @@ This is a Quiz Website that tests users on their Islamic Knowledge. This website
 
 ## Home Page Wireframe:
 
+![image](https://github.com/Rafz9Abz9/Islamic-App/assets/126483536/05f7360a-c972-4860-96b5-c2a5cedcce3e)
+
 ## Quiz Page Wireframe:
+
+![image](https://github.com/Rafz9Abz9/Islamic-App/assets/126483536/08d9e283-06fd-4dbf-8d81-51a5d8b6f837)
 
 ## Result Page Wireframe:
 
+![image](https://github.com/Rafz9Abz9/Islamic-App/assets/126483536/da31dd48-d4da-4357-b9a8-4536a846baa6)
+
 ## Leaderboard Page Wireframe:
+
+![image](https://github.com/Rafz9Abz9/Islamic-App/assets/126483536/282223c6-63f5-4dd4-b1d2-4d1e5a01be72)
 
 # Existing Features
 
