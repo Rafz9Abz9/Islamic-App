@@ -1,5 +1,9 @@
 # Islamic-App
 
+[Live Link](https://rafz9abz9.github.io/Islamic-App/)
+
+[Repository Link](https://github.com/Rafz9Abz9/Islamic-App)
+
 # User Stories
 
 # Wireframes
