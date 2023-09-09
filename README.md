@@ -30,15 +30,23 @@ This is a Quiz Website that tests users on their Islamic Knowledge. This website
 
 ## Leaderboard Page Wireframe:
 
-
 # Existing Features
 
 # Testing
 
 # Languages Used
 
+- HTML
+- CSS
+- JavaScript
+
 # Frameworks, Libraries, and Programs Used
 
+- Github: hosting repository.
+- Github Pages: deployment of site.
+- Code Institute: used the README template.
+- Visual Studio Code: for writing code.
+  
 # Deployment
 
 # Cloning Project
