@@ -6,6 +6,7 @@
     --text-white: #ffffff;
     --danger: rgb(255, 0, 0);
     --dark-gray: rgba(46, 47, 52, 0.692);
+    --disabled: rgb(20, 72, 72);
     --light-gray: #868181;
     --success: rgb(0, 128, 47);
     --sky-blue:aqua;
@@ -184,14 +185,22 @@ h5{
     text-align: center;
     text-transform: capitalize;
     appearance: none;
-   
+    cursor: pointer;
 }
 
 .question-container .options li.correct{
     border: 1px solid var(--success);
     color:  var(--success) ;
 }
+.question-container .options li.correct:hover{
+    border: 1px solid var(--success);
+    color:  var(--success) ;
+}
 .question-container .options li.incorrect{
+    border: 1px solid var(--danger);
+    color:   var(--danger) ;
+}
+.question-container .options li.incorrect:hover{
     border: 1px solid var(--danger);
     color:   var(--danger) ;
 }
@@ -200,6 +209,12 @@ h5{
     color: var(--sky-blue);
     outline: 0px;
     transform: scale(1.05, 1.05);
+}
+
+.question-container .options:disabled li{
+    border: 1px solid var(--disabled) !important;
+    color:  var(--danger) !important;
+    cursor: not-allowed;
 }
 
 .quiz_page .btn-container {
@@ -216,6 +231,12 @@ h5{
     text-transform: capitalize;
     padding: 10px;
     width: 100%;
+}
+.quiz_page .btn-container  .next_btn:disabled{
+    background:  var(--disabled);
+    border: 1px solid var(--disabled);
+    cursor: not-allowed;
+   
 }
 
 .quiz_page .btn-container  .next_btn:hover, .check_btn:hover, .quit_btn:hover{
@@ -297,9 +318,3 @@ h5{
     transform: scale(1.03, 1.03);
   
 }
-
-
-
-
-
-
