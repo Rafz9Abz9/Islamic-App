@@ -9,41 +9,40 @@ const currentQ = document.querySelector('.current');
 const totaltQ = document.querySelector('.total');
 const progress = document.querySelector('.progress-bar .progress');
 const questionDiv = document.querySelector('.question');
-let optionsDiv = document.querySelector('.options');
-const nextBtn = document.querySelector('.quiz_page .next_btn')
+const optionsDiv = document.querySelector('.options');
+const nextBtn = document.querySelector('.quiz_page .next_btn');
+const restartBtn = document.querySelector('.restart_btn');
+const quitBtn = document.querySelector('.quit_btn');
 
 
-
+const questionData = [];
 const questions = [];
 
 const INCREMENT_SCORE_BY = 10;
-let TOTAL_SCORE = 0;
+let TOTAL_SCORE = 0,
+CURRENT_SCORE = 0,
+current_question_number = 0;
 
-let current_question_number = 0,
-CURRENT_SCORE = 0;
-
-
-// document.addEventListener('load',)
 function fetchQuestions(){
     fetch("./js/question.json", {mode:"no-cors"}).then((response )=>{
         return response.json();
     }).then((data) => {
-       questions.push(...data)
+        questionData.push(...data)
         TOTAL_SCORE = INCREMENT_SCORE_BY * questions.length;
     })
 }
 fetchQuestions()
 
-
-
-
-
 startQuizBtn.addEventListener('click', initializeQuiz)
 
 async function initializeQuiz(){
-    console.log(TOTAL_SCORE);
+    questions.splice(0, questions.length);
+    questions.push(...shuffleArray(questionData));
     startPage.classList.add('hide-pages');
     quizPage.classList.remove('hide-pages');
+    current_question_number = 0;
+    CURRENT_SCORE= 0;
+    TOTAL_SCORE = INCREMENT_SCORE_BY * questions.length;
         
     showQuestionCount(currentQ, current_question_number)
 
@@ -62,7 +61,7 @@ async function initializeQuiz(){
         let optionList = optionsDiv.querySelectorAll('li');
         
         if(element.tagName === "LI"){
-           let optionValue = e.target.getAttribute('dataSet');
+           let optionValue = e.target.innerText;
           let answer = questions[current_question_number].answer;
       
           optionsDiv.setAttribute('disabled', true); 
@@ -72,18 +71,35 @@ async function initializeQuiz(){
 
         }
     })
+}
 
-    nextBtn.addEventListener('click', function () {
-        current_question_number++
-        optionsDiv.removeAttribute('disabled');
-        showQuestionCount(currentQ, current_question_number);
-        showProgress(progress, current_question_number);
-        showQuestion(questionDiv, current_question_number);
-        showOptions(optionsDiv, current_question_number);
-        nextBtn.setAttribute('disabled', true);
-        showResultPage(current_question_number);
-    })
-   
+nextBtn.addEventListener('click', function () {
+    current_question_number++
+    optionsDiv.removeAttribute('disabled');
+    showQuestionCount(currentQ, current_question_number);
+    showProgress(progress, current_question_number);
+    showQuestion(questionDiv, current_question_number);
+    showOptions(optionsDiv, current_question_number);
+    nextBtn.setAttribute('disabled', true);
+    showResultPage(current_question_number);
+})
+
+restartBtn.addEventListener('click', function() {
+    resultPage.classList.add('hide-pages');
+    initializeQuiz();
+})
+
+quitBtn.addEventListener('click', function() {
+    current_question_number = 0;
+    CURRENT_SCORE= 0;
+    TOTAL_SCORE = INCREMENT_SCORE_BY * questions.length;
+    quizPage.classList.add('hide-pages');
+    resultPage.classList.add('hide-pages');
+    startPage.classList.remove('hide-pages');
+})
+
+function shuffleArray(array) {
+   return array.sort(()=>{ return Math.random() - 0.5})
 }
 
 function showProgress(element, number){
@@ -104,27 +120,24 @@ function showQuestion(element, number){
 }
 
 function showOptions(element, number){
-    if(number > questions.length -1){return}
+    if(number > questions.length){return}
     let {question, answer, ...options} = questions[number];
 
    let newOptions = "";
-   let num =1;
-   Object.keys(options).forEach(choice => {
-     newOptions +=`<li  dataSet=${num++}>${options[choice]}</li>`
+   shuffleArray(Object.keys(options)).forEach(choice => {
+     newOptions +=`<li>${options[choice]}</li>`
    });
    element.innerHTML = newOptions;
 }
 
-
 function checkAnswer(answer, optionValue, element, optionList){
-    if(answer === Number(optionValue)){
+    if(answer.toLowerCase() == optionValue.toLowerCase() ){
         element.classList.add('correct');
         CURRENT_SCORE += INCREMENT_SCORE_BY;
-        console.log(CURRENT_SCORE);
      }else{
         element.classList.add('incorrect');
         optionList.forEach((li) => {
-            if(Number(li.getAttribute('dataSet')) === answer){
+            if(li.innerText.toLowerCase()  == answer.toLowerCase()){
                 li.classList.add('correct')
             }
          });
@@ -134,15 +147,16 @@ function checkAnswer(answer, optionValue, element, optionList){
 }
 
 function showResultPage(current_question_number) {
-    if(current_question_number >= questions.length -1){
-        current_question_number= 0;
+    if(current_question_number > questions.length){
+        current_question_number=  questions.length;
         quizPage.classList.add('hide-pages');
         resultPage.classList.remove('hide-pages');
-
         resultPage.querySelector('.score').innerText= CURRENT_SCORE;
         resultPage.querySelector('.total_score').innerText = TOTAL_SCORE;
     }
 }
+
+
 
 
 
