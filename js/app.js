@@ -1,7 +1,8 @@
+/*jshint esversion: 6 */
+
 const startPage = document.querySelector('.start_page');
 const quizPage = document.querySelector('.quiz_page');
 const resultPage = document.querySelector('.result_page');
-const leaderBoardPage = document.querySelector('.leader_board');
 
 const startQuizBtn = document.querySelector('.start_btn');
 
@@ -44,7 +45,7 @@ async function initializeQuiz(){
     CURRENT_SCORE= 0;
     TOTAL_SCORE = INCREMENT_SCORE_BY * questions.length;
         
-    showQuestionCount(currentQ, current_question_number)
+    showQuestionCount(currentQ, current_question_number);
 
     totaltQ.innerText = questions.length;
 
