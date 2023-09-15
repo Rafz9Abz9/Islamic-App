@@ -1,4 +1,6 @@
 /*jshint esversion: 6 */
+/*jshint esversion: 8 */
+/*jshint esversion: 9*/
 
 const startPage = document.querySelector('.start_page');
 const quizPage = document.querySelector('.quiz_page');
@@ -7,7 +9,7 @@ const resultPage = document.querySelector('.result_page');
 const startQuizBtn = document.querySelector('.start_btn');
 
 const currentQ = document.querySelector('.current');
-const totaltQ = document.querySelector('.total');
+const totaltQuiz = document.querySelector('.total');
 const progress = document.querySelector('.progress-bar .progress');
 const questionDiv = document.querySelector('.question');
 const optionsDiv = document.querySelector('.options');
@@ -28,13 +30,13 @@ function fetchQuestions(){
     fetch("./js/question.json", {mode:"no-cors"}).then((response )=>{
         return response.json();
     }).then((data) => {
-        questionData.push(...data)
+        questionData.push(...data);
         TOTAL_SCORE = INCREMENT_SCORE_BY * questions.length;
-    })
+    });
 }
-fetchQuestions()
+fetchQuestions();
 
-startQuizBtn.addEventListener('click', initializeQuiz)
+startQuizBtn.addEventListener('click', initializeQuiz);
 
 async function initializeQuiz(){
     questions.splice(0, questions.length);
@@ -47,7 +49,7 @@ async function initializeQuiz(){
         
     showQuestionCount(currentQ, current_question_number);
 
-    totaltQ.innerText = questions.length;
+    totaltQuiz.innerText = questions.length;
 
     showProgress(progress, current_question_number);
 
@@ -71,11 +73,11 @@ async function initializeQuiz(){
   
 
         }
-    })
+    });
 }
 
 nextBtn.addEventListener('click', function () {
-    current_question_number++
+    current_question_number++;
     optionsDiv.removeAttribute('disabled');
     showQuestionCount(currentQ, current_question_number);
     showProgress(progress, current_question_number);
@@ -83,12 +85,12 @@ nextBtn.addEventListener('click', function () {
     showOptions(optionsDiv, current_question_number);
     nextBtn.setAttribute('disabled', true);
     showResultPage(current_question_number);
-})
+});
 
 restartBtn.addEventListener('click', function() {
     resultPage.classList.add('hide-pages');
     initializeQuiz();
-})
+});
 
 quitBtn.addEventListener('click', function() {
     current_question_number = 0;
@@ -97,36 +99,36 @@ quitBtn.addEventListener('click', function() {
     quizPage.classList.add('hide-pages');
     resultPage.classList.add('hide-pages');
     startPage.classList.remove('hide-pages');
-})
+});
 
 function shuffleArray(array) {
-   return array.sort(()=>{ return Math.random() - 0.5})
+   return array.sort(()=>{ return Math.random() - 0.5;});
 }
 
 function showProgress(element, number){
-    element.style.width = `${number / questions.length * 100}%`
+    element.style.width = `${number / questions.length * 100}%`;
 
 }
 
 function showQuestionCount(element, number){
-    if(number > questions.length -1){return}
+    if(number > questions.length -1){return;}
     element.innerText = questions.indexOf(questions[number]) + 1;
 }
 
 function showQuestion(element, number){
     if(number < questions.length){
-        element.innerText = questions[number].question
+        element.innerText = questions[number].question;
     }
     return;
 }
 
 function showOptions(element, number){
-    if(number > questions.length){return}
+    if(number > questions.length){return;}
     let {question, answer, ...options} = questions[number];
 
    let newOptions = "";
    shuffleArray(Object.keys(options)).forEach(choice => {
-     newOptions +=`<li>${options[choice]}</li>`
+     newOptions +=`<li>${options[choice]}</li>`;
    });
    element.innerHTML = newOptions;
 }
@@ -139,7 +141,7 @@ function checkAnswer(answer, optionValue, element, optionList){
         element.classList.add('incorrect');
         optionList.forEach((li) => {
             if(li.innerText.toLowerCase()  == answer.toLowerCase()){
-                li.classList.add('correct')
+                li.classList.add('correct');
             }
          });
          
