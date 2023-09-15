@@ -95,6 +95,41 @@ This is a Quiz Website that tests users on their Islamic Knowledge. This website
 
 # Testing
 
+- Tests were carried out on these devices:
+
+1. Desktop
+2. Mobile
+3. Ipad
+
+- Tests were carried out with these browsers:
+
+1. Safari
+2. Chrome
+3. Microsoft Edge
+
+VALIDATOR TESTING:
+
+- HTML, CSS, and JavaScript Validators were used to check codes for syntax errors: NO ERRORS FOUND. 
+
+- HTML: https://validator.w3.org/
+- CSS: https://jigsaw.w3.org/css-validator/
+- JavaScript: https://jshint.com/
+
+HTML VALIDATOR:
+
+![image](https://github.com/Rafz9Abz9/Islamic-App/assets/126483536/ed77d15e-581d-4275-88c0-b48d4524d08b)
+
+CSS VALIDATOR:
+
+![image](https://github.com/Rafz9Abz9/Islamic-App/assets/126483536/8a74236a-abfe-4adb-a1a8-d5fabad9a227)
+
+JAVASCRIPT VALIDATOR: No errors found.
+
+LIGHTHOUSE TESTING RESULTS:
+
+![image](https://github.com/Rafz9Abz9/Islamic-App/assets/126483536/65a16f38-4baa-4e5e-aa7f-5047f6409861)
+
+
 # Languages Used
 
 - HTML
@@ -107,10 +142,37 @@ This is a Quiz Website that tests users on their Islamic Knowledge. This website
 - Github Pages: deployment of site.
 - Code Institute: used the README template.
 - Visual Studio Code: for writing code.
+- Favicon: for icon.
+- Balsamiq: for creating wireframes.
+- Lighthouse: review of website.
   
 # Deployment
 
+- The site was deployed through Github pages by following these steps:
+
+1. After logging into Github, find the section names 'Repository'.
+2. Locate the Settings tab.
+3. Locate the 'Pages' section.
+4. In the 'Branch' section, select the branch 'Main' and save it. 
+5. This will publish the site and the URL should be visible.
+
 # Cloning Project
 
+1. Log into Github and locate the Repository section. 
+2. Select 'Code' which is above the file list.
+3. Copy the repository's URL.
+4. Open Git Bash.
+5. Select the location where you want the cloned directory.
+6. Type in 'git clone' in the CLI and paste in your copied URL.
+7. Press 'Enter' to create. 
+
 # Credits
+
+- The questions used for the quiz website was taken from a folder I had saved years ago for quizzes as I organise classes weekly with other people regarding Islam. 
+- So I just took some of the questions from the folder we use. I can't remember the link for it as I had created a separate older for them years ago and saved them there.
+  
+- Background image: downloaded from a google search:
+
+![image](https://github.com/Rafz9Abz9/Islamic-App/assets/126483536/0923200d-a025-424e-847e-3fbe78742a76)
+
 
